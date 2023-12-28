@@ -27,6 +27,10 @@ No installation is required; simply open the HTML file in a web browser.
 - CSS (Bootstrap)
 - JavaScript (jQuery, Flatpickr)
 
+## Preview
+
+[[Link to the deployed Age Calculator](https://simple-age-calculator-lovat.vercel.app/)](#)
+
 ## Contributing
 
 Contributions are welcome! Feel free to submit issues or pull requests.
