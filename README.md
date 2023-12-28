@@ -29,7 +29,7 @@ No installation is required; simply open the HTML file in a web browser.
 
 ## Preview
 
-[(https://simple-age-calculator-lovat.vercel.app/)](#)
+(https://simple-age-calculator-lovat.vercel.app/)
 
 ## Contributing
 
