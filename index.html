@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card-header {
+            background: #B24329;
+            background: linear-gradient(135deg, #B24329, #6E34E6);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: #B24329;
+            background: linear-gradient(135deg, #B24329, #6E34E6);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #B24329;
+            background: linear-gradient(135deg, #B24329, #6E34E6);
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+        }
+
+        #result-container {
+            background: #B24329;
+            background: linear-gradient(135deg, #B24329, #6E34E6);
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #result {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Age Calculator</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="birthdate">Select Your Birthdate:</label>
+                            <input type="text" id="birthdate" class="form-control">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateAge()">Calculate Age</button>
+                        <div id="result-container" class="mt-3">
+                            <div id="result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        flatpickr("#birthdate", {
+            dateFormat: "Y-m-d",
+            maxDate: "today" // Restricts selection of dates to be on or before today
+        });
+
+        function calculateAge() {
+            var birthdate = new Date(document.getElementById('birthdate').value);
+            var today = new Date();
+
+            var ageInMilliseconds = today - birthdate;
+
+            var years = Math.floor(ageInMilliseconds / 31536000000);
+            var months = Math.floor((ageInMilliseconds % 31536000000) / 2628000000);
+            var days = Math.floor(((ageInMilliseconds % 31536000000) % 2628000000) / 86400000);
+
+            var resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = "Your age is " + years + " years, " + months + " months, and " + days + " days.";
+            $("#result").css("padding", "10px")
+        }
+    </script>
+</body>
+
+</html>
