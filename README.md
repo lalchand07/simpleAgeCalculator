@@ -1,5 +1,5 @@
 # Age Calculator
-
+![Age Calculator](image.jpg)
 ## Description
 
 A simple age calculator web application that allows users to input their birthdate and calculate their age. The application is designed with a clean and responsive user interface.
